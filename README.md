@@ -5,7 +5,7 @@ For each user,create a card and export it as pdf and docx documents.
 
 Quick start
 -----------
-1. Add "erscipcard" to your INSTALLED_APPS setting like this:
+1.Add "erscipcard" to your INSTALLED_APPS setting like this:
 ```
 INSTALLED_APPS = [
 ...,
@@ -16,7 +16,9 @@ INSTALLED_APPS = [
 
 2.Include the erscipcard URLconf in your project urls.py like this:
 
-``path('erscipcard/', include('erscipcard.urls')),``.
+```
+path('erscipcard/', include('erscipcard.urls')),
+```
 
 3.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the erscipcard models.
 
