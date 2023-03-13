@@ -215,7 +215,7 @@
 	<script src="{% static 'bt/vendor/jquery/jquery.min.js' %}"></script>
 	<script src="{% static 'bt/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!--<script src="js/jquery-1.10.1.min.js"></script>-->
+    <script src="js/jquery-1.10.1.min.js"></script>
     <script src="{% static 'persianDatepicker.js' %}"></script>
 	<!-- Plugin JavaScript -->
 	<script src="{% static 'bt/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
@@ -226,9 +226,7 @@
 
 	<script>
         $(function () {
-            $("#id_req_date").persianDatepicker();
-            $("#id_start_date").persianDatepicker();
-            $("#id_end_date").persianDatepicker();
+            $("#etebar").persianDatepicker();            
         });
     
     document.querySelectorAll('form').forEach(form => form.addEventListener('submit', loadershow));
