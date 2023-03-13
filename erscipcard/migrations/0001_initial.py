@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='نام کاربری')),
                 ('personeli', models.CharField(max_length=20, unique=True, verbose_name='شماره پرسنلی')),
-                ('etebar', models.CharField(max_length=10, verbose_name='تاریخ ااعتبار')),
+                ('etebar', models.CharField(max_length=10, verbose_name='تاريخ اعتبار')),
                 ('pic', models.ImageField(blank=True, null=True, upload_to='images/', verbose_name='تصویر')),
                 ('number', models.IntegerField(default=1, unique=True, verbose_name='شماره کارت')),
             ],
