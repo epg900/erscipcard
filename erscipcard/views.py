@@ -277,7 +277,7 @@ def printalluser(request):
 		if platform.system() == "Windows":
 			os.system("docx2pdf {}".format('aa.docx'))
 		if platform.system() == "Linux":
-			os.system("lowriter --convert-to pdf  {}".format("aa.docx"))
+			os.system("sudo lowriter --convert-to pdf  {}".format("aa.docx"))
 		#f = open(os.path.join(Path(__file__).resolve().parent.parent,"aa.pdf"), 'rb')
 		f = open("aa.pdf", 'rb')
 		pdf_contents = f.read()
