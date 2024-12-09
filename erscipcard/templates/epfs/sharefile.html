@@ -136,7 +136,11 @@ function ax(){
     });
 
     request.addEventListener('load', function(e) {
-	    window.location.reload();
+	    //window.location.reload();
+		let html = request.response;
+		document.getElementById("showpicimg").innerHTML = html;
+		//window.open(html,'_self');
+		$("#canvasshowpic").modal('show');
     });
     request.send(fd);
     }
