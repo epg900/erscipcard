@@ -139,6 +139,8 @@ function ax(){
 	    //window.location.reload();
 		let html = request.response;
 		document.getElementById("showpicimg").innerHTML = html;
+		var pbar0 = document.getElementById("pbar0");
+    	pbar0.style = "display: none;"
 		//window.open(html,'_self');
 		$("#canvasshowpic").modal('show');
     });
