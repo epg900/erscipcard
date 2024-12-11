@@ -5,7 +5,7 @@
 <head>
 <title>epfs share file</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="{% static 'bt/css/bootstrap.min.css' %}" rel="stylesheet" >
+<link href="{% static 'bt/css/bootstrap.min.5.0.css' %}" rel="stylesheet" >
 
 </head>
 <body>
@@ -43,28 +43,37 @@
 		{% regroup filelist by keystring as file_list %}
 
 		<div class="container-fluid p-5 bg-body text-white text-center">
-
-        <ul class="list-group list-group-numbered">
+		
+		<div class="table-responsive ">
+		<table class="table table-striped table-hover" >      
 
             {% for file in file_list %}
-                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center " >
+			<tr>
+					<td class="text-start" style="word-wrap: break-word;">
                         <div class="ms-2 me-auto dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
                         {{ file.list.0.Name }}
                         </div>
-                        <a class="btn btn-outline-success rounded-pill ms-2 me-2" href="#" onclick="showpic(1,{{file.list.0.id}});" ><img  src="{% static 'download.png' %}"></a>
-                        <a class="btn btn-outline-danger rounded-pill" href="#" onclick="window.open('/epfs/delfolder?id={{file.list.0.keystring}}','_self');"><img  src="{% static 'trash.png' %}"></a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% for fl in file.list %}
                         <li class="dropdown-item  d-flex justify-content-between align-items-start" >
                             <a class="ms-2 me-2" href="#" onclick="showpic(2,{{fl.id}});" style="text-decoration: none; cursor: pointer;">{{fl.Name}}</a>
                             <a class="btn btn-outline-danger rounded-pill" href="#" onclick="window.open('/epfs/delfile?id={{fl.id}}','_self');"><img  src="{% static 'trash.png' %}"></a>
                         </li>
                     {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
+						</ul>
+					</td>
+					<td class="text-end">
+					<a class="btn btn-outline-success rounded-pill ms-2 me-2" href="#" onclick="showpic(1,{{file.list.0.id}});" ><img  src="{% static 'download.png' %}"></a>
+					</td class="text-end">
+					<td>
+					<a class="btn btn-outline-danger rounded-pill" href="#" onclick="window.open('/epfs/delfolder?id={{file.list.0.keystring}}','_self');"><img  src="{% static 'trash.png' %}"></a>
+                    </td>
+					
+            </tr>    
+            {% endfor %}      
 
-        </ul>
+		</table>
+		</div>
 
         </div>
 
@@ -106,7 +115,9 @@
 </div>
 
 <script src="{% static 'bt/js/jquery.min.js' %}"></script>
-<script src="{% static 'bt/js/bootstrap.bundle.min.js' %}" ></script>
+<script src="{% static 'bt/js/popper.min.2.1.js' %}" ></script>
+<script src="{% static 'bt/js/bootstrap.min.5.1.js' %}" ></script>
+
 
 <script>
 
